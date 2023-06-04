@@ -12,7 +12,7 @@ const Homepage = ()=>{
     },[]);
 
     const getProducts=async()=>{
-        let result = await fetch('http://localhost:4000/products',{
+        let result = await fetch('https://e-commerce-desktop.onrender.com/products',{
             headers:{
                 authorization : ` bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
@@ -22,7 +22,7 @@ const Homepage = ()=>{
     }
 
     const deleteproduct= async(id)=>{
-    let result = await fetch(`http://localhost:4000/product/${id}`,{
+    let result = await fetch(`https://e-commerce-desktop.onrender.com/product/${id}`,{
         method:'DELETE',
         headers:{
             authorization : ` bearer ${JSON.parse(localStorage.getItem('token'))}`
@@ -37,7 +37,7 @@ const Homepage = ()=>{
         const key = event.target.value;
 
         if(key){
-        let result = await fetch(`http://localhost:4000/search/${key}`,{
+        let result = await fetch(`https://e-commerce-desktop.onrender.com/search/${key}`,{
             headers:{
                 authorization : ` bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
