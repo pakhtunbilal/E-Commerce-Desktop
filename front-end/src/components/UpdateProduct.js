@@ -18,7 +18,7 @@ const Updateproduct = () => {
 
     const productdeatils = async () => {
         console.warn(param)
-        let result = await fetch(`http://localhost:4000/product/${param.id}`,{
+        let result = await fetch(`https://e-commerce-desktop.onrender.com/product/${param.id}`,{
             headers:{
                 authorization : ` bearer ${JSON.parse(localStorage.getItem('token'))}`
             }
@@ -33,7 +33,7 @@ const Updateproduct = () => {
 
     const HandleUpdate = async () => {
 
-        let result = await fetch(`http://localhost:4000/product/${param.id}`, {
+        let result = await fetch(`https://e-commerce-desktop.onrender.com/product/${param.id}`, {
             method: 'PUT',
             body: JSON.stringify({ name, price, category, company }),
             headers: {
